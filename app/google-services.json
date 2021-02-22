@@ -1,15 +1,16 @@
 {
   "project_info": {
     "project_number": "508629521837",
+    "firebase_url": "https://healthtracker-8c3d1-default-rtdb.firebaseio.com",
     "project_id": "healthtracker-8c3d1",
     "storage_bucket": "healthtracker-8c3d1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:508629521837:android:47bba80262b0cb045cfd24",
+        "mobilesdk_app_id": "1:508629521837:android:7f3e4795d6ac473d5cfd24",
         "android_client_info": {
-          "package_name": "com.company.healthtracker"
+          "package_name": "com.example.healthtracker"
         }
       },
       "oauth_client": [
