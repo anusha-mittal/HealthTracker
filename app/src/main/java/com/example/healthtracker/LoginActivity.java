@@ -11,8 +11,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.healthtracker.Models.Prevalent;
-import com.example.healthtracker.Models.Users;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -51,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
                     progressDialog.setMessage("Checking credentials, please wait..");
                     progressDialog.show();
 
-                        login(number, pass);
+                    login(number, pass);
 
                 }
             }
@@ -63,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
         final DatabaseReference userNameRef = rootRef.child("users").child(number);
         ValueEventListener eventListener = new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (!dataSnapshot.exists()) {
                     Toast.makeText(LoginActivity.this, "This number doesn't exist, try again!", Toast.LENGTH_SHORT).show();
                     progressDialog.dismiss();
@@ -71,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(intent);
                 } else {
                     progressDialog.dismiss();
-                    Users userData=dataSnapshot.getValue(Users.class);
+//                    Users userData=dataSnapshot.getValue(Users.class);
 //                    if(userData.getPass().equals(pass))
 //                      Toast.makeText(LoginActivity.this, "Congratulations! You are logged in!", Toast.LENGTH_SHORT).show();
 //                    else{
@@ -79,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
 //                        Intent intent=new Intent(LoginActivity.this,MainActivity.class);
 //                        startActivity(intent);
 //                    }
-                   Prevalent.currentOnlineUser=userData;
+//                    Prevalent.currentOnlineUser=userData;
                     Toast.makeText(LoginActivity.this, "Congratulations! You are logged in!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);

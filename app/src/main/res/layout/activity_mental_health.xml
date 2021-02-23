@@ -20,7 +20,7 @@
             android:layout_gravity="top">
 
             <EditText
-                android:id="@+id/etAge"
+                android:id="@+id/age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
