@@ -8,6 +8,7 @@
     tools:context=".HomeActivity">
 
     <LinearLayout
+        android:id="@+id/llMental"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -24,6 +25,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/llPhysical"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"

@@ -112,7 +112,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     } else {
                                         //  progressDialog.dismiss();
                                         Toast.makeText(RegisterActivity.this, "there seems to be some error, try again!", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
+                                        Intent intent = new Intent(RegHomeActivityisterActivity.this, .class);
                                         startActivity(intent);
                                     }
                                 }

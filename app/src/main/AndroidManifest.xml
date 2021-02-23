@@ -12,7 +12,7 @@
         <activity android:name=".MentalHealthActivity"></activity>
         <activity
             android:name=".SplashScreen"
-            android:label="YourAppName">
+            android:label="Health Tracker">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,7 +30,7 @@
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:label="YourAppName">
+            android:label="Health Tracker">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,7 +39,7 @@
         </activity>
         <activity
             android:name=".HomeActivity"
-            android:label="YourAppName">
+            android:label="Health Tracker">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
