@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.healthtracker.Models.Prevalent;
+import com.example.healthtracker.Models.Users;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -69,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(intent);
                 } else {
                     progressDialog.dismiss();
-//                    Users userData=dataSnapshot.getValue(Users.class);
+                    Users userData=dataSnapshot.getValue(Users.class);
 //                    if(userData.getPass().equals(pass))
 //                      Toast.makeText(LoginActivity.this, "Congratulations! You are logged in!", Toast.LENGTH_SHORT).show();
 //                    else{
@@ -77,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
 //                        Intent intent=new Intent(LoginActivity.this,MainActivity.class);
 //                        startActivity(intent);
 //                    }
-//                    Prevalent.currentOnlineUser=userData;
+                   Prevalent.currentOnlineUser=userData;
                     Toast.makeText(LoginActivity.this, "Congratulations! You are logged in!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);

@@ -13,6 +13,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.healthtracker.Models.Prevalent;
+import com.example.healthtracker.Models.Users;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
@@ -100,6 +102,9 @@ public class RegisterActivity extends AppCompatActivity {
                     map.put("number", number);
                     map.put("password", pass);
 
+                    Users userdata=dataSnapshot.child("users").child(number).getValue(Users.class);
+                    Prevalent.currentOnlineUser=userdata;
+
                     databaseReference.child("users").child(number).updateChildren(map)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
@@ -112,7 +117,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     } else {
                                         //  progressDialog.dismiss();
                                         Toast.makeText(RegisterActivity.this, "there seems to be some error, try again!", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(RegHomeActivityisterActivity.this, .class);
+                                        Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
                                         startActivity(intent);
                                     }
                                 }
