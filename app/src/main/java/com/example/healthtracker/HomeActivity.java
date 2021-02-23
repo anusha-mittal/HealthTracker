@@ -27,5 +27,12 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        llPhysical.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(HomeActivity.this,PhysicalHealthActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

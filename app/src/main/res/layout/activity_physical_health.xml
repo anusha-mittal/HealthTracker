@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:text="Enter your height"/>
         <EditText
-            android:id="@+id/wt"
+            android:id="@+id/etHeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter height in meters"/>
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:text="Enter your weight"/>
         <EditText
-            android:id="@+id/ht"
+            android:id="@+id/etWeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter weight in kgs"/>
@@ -39,13 +39,13 @@
             android:layout_height="wrap_content"
             android:text="Enter your Age"/>
         <EditText
-            android:id="@+id/phyage"
+            android:id="@+id/etAge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter your age"/>
 
         <Button
-            android:id="@+id/btnbmi"
+            android:id="@+id/btnBmi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
