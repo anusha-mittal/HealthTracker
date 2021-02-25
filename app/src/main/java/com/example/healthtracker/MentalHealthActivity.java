@@ -28,7 +28,7 @@ public class MentalHealthActivity extends AppCompatActivity {
     Button btnRegister;
     String gender,locationType,fieldOfStudy,insomnia,screenTime;//headache = fatigue
 
-    int age,stressLevel,socialCircle,headache,energyLevel,physicalActivity,anxietyAttacks,growthRate,alcoholIntake,mentalHealth;
+    String age,stressLevel,socialCircle,headache,energyLevel,physicalActivity,anxietyAttacks,growthRate,alcoholIntake,mentalHealth;
     Boolean suicidalThoughts,mentalIllness;
     //RadioButton genderMale,genderFemale,genderOther,hdevcity,mdevcity,ldevcity,stress1,stress2,stress3,stress4,stress5;
     Users userdata=Prevalent.currentOnlineUser;
@@ -82,23 +82,23 @@ public class MentalHealthActivity extends AppCompatActivity {
 
             case R.id.stress1:
                 if (checked)
-                    stressLevel = 1;
+                    stressLevel = "1";
                 break;
             case R.id.stress2:
                 if (checked)
-                    stressLevel = 2;
+                    stressLevel = "2";
                 break;
             case R.id.stress3:
                 if (checked)
-                    stressLevel = 3;
+                    stressLevel = "3";
                 break;
             case R.id.stress4:
                 if (checked)
-                    stressLevel = 4;
+                    stressLevel = "4";
                 break;
             case R.id.stress5:
                 if (checked)
-                    stressLevel = 5;
+                    stressLevel = "5";
                 break;
 
             case R.id.medical:
@@ -129,45 +129,45 @@ public class MentalHealthActivity extends AppCompatActivity {
 
             case R.id.social1:
                 if (checked)
-                    socialCircle=1;
+                    socialCircle="1";
                 break;
 
             case R.id.social2:
                 if (checked)
-                    socialCircle=2;
+                    socialCircle="2";
                 break;
             case R.id.social3:
                 if (checked)
-                    socialCircle=3;
+                    socialCircle="3";
                 break;
             case R.id.social4:
                 if (checked)
-                    socialCircle=4;
+                    socialCircle="4";
                 break;
             case R.id.social5:
                 if (checked)
-                    socialCircle=5;
+                    socialCircle="5";
                 break;
 
             case R.id.fatigue1:
                 if (checked)
-                    headache=1;
+                    headache= "1";
                 break;
             case R.id.fatigue2:
                 if (checked)
-                    headache=2;
+                    headache="2";
                 break;
             case R.id.fatigue3:
                 if (checked)
-                    headache=3;
+                    headache="3";
                 break;
             case R.id.fatigue4:
                 if (checked)
-                    headache=4;
+                    headache="4";
                 break;
             case R.id.fatigue5:
                 if (checked)
-                    headache=5;
+                    headache="5";
                 break;
 
             case R.id.suicideyes:
@@ -181,111 +181,111 @@ public class MentalHealthActivity extends AppCompatActivity {
 
             case R.id.conc1:
                 if (checked)
-                    energyLevel = 1;
+                    energyLevel = "1";
                 break;
 
             case R.id.conc2 :
                 if (checked)
-                    energyLevel=2;
+                    energyLevel= "2";
                 break;
             case R.id.conc3:
                 if (checked)
-                    energyLevel=3;
+                    energyLevel= "3";
                 break;
             case R.id.conc4:
                 if (checked)
-                    energyLevel=4;
+                    energyLevel="4";
                 break;
             case R.id.conc5:
                 if (checked)
-                    energyLevel=5;
+                    energyLevel="5";
                 break;
 
             case R.id.exe1:
                 if (checked)
-                    physicalActivity = 1;
+                    physicalActivity =  "1";
                 break;
 
             case R.id.exe2:
                 if (checked)
-                    physicalActivity = 2;
+                    physicalActivity = "2";
                 break;
             case R.id.exe3:
                 if (checked)
-                    physicalActivity=3;
+                    physicalActivity="3";
                 break;
             case R.id.exe4:
                 if (checked)
-                    physicalActivity=4;
+                    physicalActivity="4";
                 break;
             case R.id.exe5:
                 if (checked)
-                    physicalActivity = 5;
+                    physicalActivity = "5";
                 break;
 
             case R.id.alcohol1:
                 if (checked)
-                    alcoholIntake=1;
+                    alcoholIntake="1";
                 break;
 
             case R.id.alcohol2:
                 if (checked)
-                    alcoholIntake = 2;
+                    alcoholIntake = "2";
                 break;
             case R.id.alcohol3:
                 if (checked)
-                    alcoholIntake = 3;
+                    alcoholIntake = "3";
                 break;
             case R.id.alcohol4:
                 if (checked)
-                    alcoholIntake = 4;
+                    alcoholIntake = "4";
                 break;
             case R.id.alcohol5:
                 if (checked)
-                    alcoholIntake=5;
+                    alcoholIntake="5";
                 break;
 
             case R.id.anx1:
                 if (checked)
-                    anxietyAttacks =1;
+                    anxietyAttacks ="1";
                 break;
 
             case R.id.anx2:
                 if (checked)
-                    anxietyAttacks =2;
+                    anxietyAttacks ="2";
                 break;
             case R.id.anx3:
                 if (checked)
-                    anxietyAttacks =3;
+                    anxietyAttacks ="3";
                 break;
             case R.id.anx4:
                 if (checked)
-                    anxietyAttacks =4;
+                    anxietyAttacks ="4";
                 break;
             case R.id.anx5:
                 if (checked)
-                    anxietyAttacks = 5;
+                    anxietyAttacks = "5";
                 break;
 
             case R.id.growth1:
                 if (checked)
-                    growthRate =1;
+                    growthRate ="1";
                 break;
             case R.id.growth2:
                 if (checked)
-                    growthRate=2;
+                    growthRate="2";
                 break;
             case R.id.growth3:
                 if (checked)
-                    growthRate=3;
+                    growthRate="3";
                 break;
             case R.id.growth4:
                 if (checked)
-                    growthRate = 4;
+                    growthRate = "4";
                 break;
             case R.id.growth5:
                 if (checked)
-                    growthRate = 5;
+                    growthRate = "5";
                 break;
 
 
@@ -317,23 +317,23 @@ public class MentalHealthActivity extends AppCompatActivity {
 
             case R.id.mental1:
                 if (checked)
-                    mentalHealth = 1;
+                    mentalHealth = "1";
                 break;
             case R.id.mental2:
                 if (checked)
-                    mentalHealth =2;
+                    mentalHealth ="2";
                 break;
             case R.id.mental3:
                 if (checked)
-                    mentalHealth = 3;
+                    mentalHealth = "3";
                 break;
             case R.id.mental4:
                 if (checked)
-                    mentalHealth = 4;
+                    mentalHealth ="4";
                 break;
             case R.id.mental5:
                 if (checked)
-                    mentalHealth = 5;
+                    mentalHealth = "5";
                 break;
         }
 
@@ -349,9 +349,9 @@ public class MentalHealthActivity extends AppCompatActivity {
                 String number=userdata.getNumber();
                 if (!dataSnapshot.child("users").child(number).child("Mental Health").exists()) {
                     HashMap<String, Object> map = new HashMap<>();
-//                    map.put("name", userdata.getName());
-//                    map.put("number", userdata.getNumber());
-//                    map.put("password", userdata.getPass());
+                    map.put("name", userdata.getName());
+                    map.put("number", userdata.getNumber());
+                    map.put("password", userdata.getPass());
                     map.put("gender", gender);
 
                     databaseReference.child("users").child(number).child("Mental Health").updateChildren(map)
@@ -387,6 +387,10 @@ public class MentalHealthActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
+    //add networking
 
 
 }

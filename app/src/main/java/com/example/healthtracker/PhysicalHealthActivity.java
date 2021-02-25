@@ -30,6 +30,9 @@ public class PhysicalHealthActivity extends AppCompatActivity {
     Users userdata= Prevalent.currentOnlineUser;
     private ProgressDialog progressDialog;
 
+    double bmi;
+    int cal_count;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,11 +45,24 @@ public class PhysicalHealthActivity extends AppCompatActivity {
         progressDialog=new ProgressDialog(this);
 
         btnBmi.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View v) {
                 String height=etHeight.getText().toString();
                 String weight=etWeight.getText().toString();
                 String age=etAge.getText().toString();
+
+                int ht = Integer.parseInt(height);
+                int wt = Integer.parseInt(weight);
+                int a = Integer.parseInt(age);
+
+                bmi = wt/(ht*ht);
+
+                if(a>=14 && a<=18 && bmi <=24)
+                    cal_count = 1400;
+
+
 
                 if(TextUtils.isEmpty(height)){
                     Toast.makeText(PhysicalHealthActivity.this, "Enter height..", Toast.LENGTH_SHORT).show();
@@ -60,12 +76,13 @@ public class PhysicalHealthActivity extends AppCompatActivity {
                     progressDialog.setTitle("Physical Health Data");
                     progressDialog.setMessage("adding data, please wait..");
                     progressDialog.show();
-                    addInDatabase(height, weight, age);
+                    addInDatabase(height, weight, age); //add cal_count
                 }
             }
         });
     }
 
+    //db function starts here
     private void addInDatabase(String height,String weight,String age){
         final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
 
@@ -114,7 +131,7 @@ public class PhysicalHealthActivity extends AppCompatActivity {
 
             }
         });
-    }
+    }//End of database func
 
 
 }
