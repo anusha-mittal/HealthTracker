@@ -608,7 +608,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Submit"/>
+                android:text="Submit"
+                android:onClick="httpReq"/>
 
         </LinearLayout>
     </LinearLayout>

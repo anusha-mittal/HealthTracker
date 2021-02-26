@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,7 +21,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.io.IOException;
 import java.util.HashMap;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class MentalHealthActivity extends AppCompatActivity {
 
@@ -405,9 +415,22 @@ public class MentalHealthActivity extends AppCompatActivity {
         });
     }
 
+    public void httpReq(View view)
+    {
+        OkHttpClient okHttpClient = new OkHttpClient();
+        Request request = new Request.Builder().url("https://bhavikarastogi07.github.io/Mental-Health-Rating-Prediction/").build();
+        okHttpClient.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                Toast.makeText(MentalHealthActivity.this,"URL not found",Toast.LENGTH_LONG).show();
+            }
 
-
-    //add networking
-
+            @Override
+            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                TextView textView = (TextView)findViewById(R.id.resMentalHealth);
+                textView.setText(response.body().string());
+            }
+        });
+    }
 
 }
