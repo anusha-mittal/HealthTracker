@@ -78,7 +78,7 @@ public class PhysicalHealthActivity extends AppCompatActivity {
                 int wt = Integer.parseInt(weight);
                 int a = Integer.parseInt(age);
 
-                int bmi = wt/(ht*ht);
+                bmi = wt/(ht*ht);
                 calorieAllocation(a);
                 categoryAllocation(bmi);
                 calculatedBMI.setText(String.valueOf(bmi));
@@ -295,7 +295,7 @@ public class PhysicalHealthActivity extends AppCompatActivity {
         }
     }
 
-    public void categoryAllocation(int bmi){
+    public void categoryAllocation(double bmi){
         if(bmi<18.5){
             obesity="Underweight";
         }else if(bmi>=18.5 && bmi<=24.5){
