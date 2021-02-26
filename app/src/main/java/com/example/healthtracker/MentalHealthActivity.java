@@ -38,10 +38,12 @@ public class MentalHealthActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mental_health);
         btnRegister=findViewById(R.id.btnRegister);
+        etAge=findViewById(R.id.etAge);
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                age=etAge.getText().toString();
                 addInDatabase();
             }
         });
@@ -349,10 +351,25 @@ public class MentalHealthActivity extends AppCompatActivity {
                 String number=userdata.getNumber();
                 if (!dataSnapshot.child("users").child(number).child("Mental Health").exists()) {
                     HashMap<String, Object> map = new HashMap<>();
-                    map.put("name", userdata.getName());
-                    map.put("number", userdata.getNumber());
-                    map.put("password", userdata.getPass());
-                    map.put("gender", gender);
+//                    map.put("name", userdata.getName());
+//                    map.put("number", userdata.getNumber());
+//                    map.put("password", userdata.getPass());
+                    map.put("age", age);
+                    map.put("locationType", locationType);
+                    map.put("stressLevel", stressLevel);
+                    map.put("fieldOfStudy", fieldOfStudy);
+                    map.put("insomnia", insomnia);
+                    map.put("socialCircle", socialCircle);
+                    map.put("headache", headache);
+                    map.put("screenTime", screenTime);
+                    map.put("suicidalThoughts", suicidalThoughts);
+                    map.put("energyLevel", energyLevel);
+                    map.put("physicalActivity", physicalActivity);
+                    map.put("anxietyAttacks", anxietyAttacks);
+                    map.put("growthRate", growthRate);
+                    map.put("alcoholIntake", alcoholIntake);
+                    map.put("mentalIllness", mentalIllness);
+                    map.put("mentalHealth", mentalHealth);
 
                     databaseReference.child("users").child(number).child("Mental Health").updateChildren(map)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {

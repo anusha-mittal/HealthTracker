@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,12 +27,14 @@ import java.util.HashMap;
 public class PhysicalHealthActivity extends AppCompatActivity {
 
     EditText etHeight,etWeight,etAge;
-    Button btnBmi;
+    Button btnBmi,btnCalorie;
+    TextView reqdCalorie,calculatedBMI,category;
     Users userdata= Prevalent.currentOnlineUser;
     private ProgressDialog progressDialog;
 
     double bmi;
     int cal_count;
+    String obesity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,27 +45,18 @@ public class PhysicalHealthActivity extends AppCompatActivity {
         etWeight=findViewById(R.id.etWeight);
         etAge=findViewById(R.id.etAge);
         btnBmi=findViewById(R.id.btnBmi);
+        reqdCalorie=findViewById(R.id.reqdCalorie);
+        calculatedBMI=findViewById(R.id.calculatedBMI);
+        category=findViewById(R.id.category);
+        btnCalorie=findViewById(R.id.btnCalorie);
         progressDialog=new ProgressDialog(this);
 
         btnBmi.setOnClickListener(new View.OnClickListener() {
-
-
             @Override
             public void onClick(View v) {
                 String height=etHeight.getText().toString();
                 String weight=etWeight.getText().toString();
                 String age=etAge.getText().toString();
-
-                int ht = Integer.parseInt(height);
-                int wt = Integer.parseInt(weight);
-                int a = Integer.parseInt(age);
-
-                bmi = wt/(ht*ht);
-
-                if(a>=14 && a<=18 && bmi <=24)
-                    cal_count = 1400;
-
-
 
                 if(TextUtils.isEmpty(height)){
                     Toast.makeText(PhysicalHealthActivity.this, "Enter height..", Toast.LENGTH_SHORT).show();
@@ -78,6 +72,27 @@ public class PhysicalHealthActivity extends AppCompatActivity {
                     progressDialog.show();
                     addInDatabase(height, weight, age); //add cal_count
                 }
+
+                int ht = Integer.parseInt(height);
+                int wt = Integer.parseInt(weight);
+                int a = Integer.parseInt(age);
+
+                bmi = wt/(ht*ht);
+                calculatedBMI.setText(String.valueOf(bmi));
+
+                if(a>=14 && a<=18 && bmi <=24)
+                    cal_count = 1400;
+
+
+                reqdCalorie.setText(String.valueOf(cal_count));
+                category.setText(obesity);
+            }
+        });
+
+        btnCalorie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //navigate to next activity
             }
         });
     }
@@ -92,9 +107,6 @@ public class PhysicalHealthActivity extends AppCompatActivity {
                 String number=userdata.getNumber();
                 if (!dataSnapshot.child("users").child(number).child("Physical Health").exists()) {
                     HashMap<String, Object> map = new HashMap<>();
-//                    map.put("name", userdata.getName());
-//                    map.put("number", userdata.getNumber());
-//                    map.put("password", userdata.getPass());
                     map.put("height", height);
                     map.put("weight", weight);
                     map.put("age", age);

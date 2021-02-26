@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
     tools:context=".PhysicalHealthActivity">
 
     <LinearLayout
@@ -51,41 +52,66 @@
             android:layout_gravity="center"
             android:text="calculate bmi" />
 
-
-
-        <TextView
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="You should eat 2000 calories"/>
-
-        <TextView
-            android:layout_width="match_parent"
+            android:orientation="horizontal">
+          <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Eaten already : 1000 calories"/>
-        <TextView
-            android:layout_width="match_parent"
+            android:text="The amount of calories you should have: ">
+          </TextView>
+
+            <TextView
+                android:id="@+id/reqdCalorie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="2000 cal">
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1000 calories to go!"/>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your BMI is:  ">
+            </TextView>
 
-        <TextView
-            android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/calculatedBMI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="24">
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ate something? ADD HERE: "/>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="According to your BMI you fall into:  ">
+            </TextView>
 
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="enter food item"/>
-
+            <TextView
+                android:id="@+id/category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Underweight">
+            </TextView>
+        </LinearLayout>
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnCalorie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Add to today's total"/>
-
+            android:text="Calculate todays Calories intake"/>
     </LinearLayout>
 
 </LinearLayout>
