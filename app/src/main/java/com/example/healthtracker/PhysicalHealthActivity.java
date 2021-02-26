@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,7 +35,7 @@ public class PhysicalHealthActivity extends AppCompatActivity {
 
     double bmi;
     int cal_count;
-    String obesity;
+    String obesity,gender,activityStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,20 +71,17 @@ public class PhysicalHealthActivity extends AppCompatActivity {
                     progressDialog.setTitle("Physical Health Data");
                     progressDialog.setMessage("adding data, please wait..");
                     progressDialog.show();
-                    addInDatabase(height, weight, age); //add cal_count
+                    addInDatabase(height, weight, age,gender,activityStatus); //add cal_count
                 }
 
                 int ht = Integer.parseInt(height);
                 int wt = Integer.parseInt(weight);
                 int a = Integer.parseInt(age);
 
-                bmi = wt/(ht*ht);
+                int bmi = wt/(ht*ht);
+                calorieAllocation(a);
+                categoryAllocation(bmi);
                 calculatedBMI.setText(String.valueOf(bmi));
-
-                if(a>=14 && a<=18 && bmi <=24)
-                    cal_count = 1400;
-
-
                 reqdCalorie.setText(String.valueOf(cal_count));
                 category.setText(obesity);
             }
@@ -97,8 +95,38 @@ public class PhysicalHealthActivity extends AppCompatActivity {
         });
     }
 
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch (view.getId()) {
+            case R.id.genderFemale:
+                if (checked)
+                    gender = "Female";
+                break;
+            case R.id.genderMale:
+                if (checked)
+                    gender = "Male";
+                break;
+
+            case R.id.sedentary:
+                if (checked)
+                    activityStatus = "sedentary";
+                break;
+            case R.id.moderatelyActive:
+                if (checked)
+                    activityStatus = "modelatelyActive";
+                break;
+            case R.id.Active:
+                if (checked)
+                    activityStatus = "Active";
+                break;
+        }
+    }
+
     //db function starts here
-    private void addInDatabase(String height,String weight,String age){
+    private void addInDatabase(String height,String weight,String age,String gender,String activityStatus){
         final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
 
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -110,6 +138,8 @@ public class PhysicalHealthActivity extends AppCompatActivity {
                     map.put("height", height);
                     map.put("weight", weight);
                     map.put("age", age);
+                    map.put("gender",gender);
+                    map.put("activityStatus",activityStatus);
 
                     databaseReference.child("users").child(number).child("Physical Health").updateChildren(map)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -145,5 +175,136 @@ public class PhysicalHealthActivity extends AppCompatActivity {
         });
     }//End of database func
 
+    public void calorieAllocation(int a){
+        if(a>=2 && a<=3){
+            if(activityStatus=="sedentary"){
+                cal_count=1000;
+            }else if(activityStatus=="moderatelyActive"){
+                cal_count=1200;
+            }else{
+                cal_count=1200;
+            }
+        }else if(a>=4 && a<=8){
+            if (gender == "Female") {
+                if(activityStatus=="sedentary"){
+                    cal_count=1200;
+                }else if(activityStatus=="moderatelyActive"){
+                    cal_count=1500;
+                }else{
+                    cal_count=1600;
+                }
+            }else{
+                if(activityStatus=="sedentary"){
+                    cal_count=1400;
+                }else if(activityStatus=="moderatelyActive"){
+                    cal_count=1500;
+                }else{
+                    cal_count=1800;
+                }
+            }
+        }else if(a>=9 && a<=13){
+            if (gender == "Female") {
+                if(activityStatus=="sedentary"){
+                    cal_count=1600;
+                }else if(activityStatus=="moderatelyActive"){
+                    cal_count=1800;
+                }else{
+                    cal_count=2000;
+                }
+            }else{
+                if(activityStatus=="sedentary"){
+                    cal_count=1800;
+                }else if(activityStatus=="moderatelyActive"){
+                    cal_count=2000;
+                }else{
+                    cal_count=2300;
+                }
+            }
+        }else if(a>=14 && a<=18){
+            if (gender == "Female") {
+                if(activityStatus=="sedentary"){
+                    cal_count=1800;
+                }else if(activityStatus=="moderatelyActive"){
+                    cal_count=2000;
+                }else{
+                    cal_count=2400;
+                }
+            }else{
+                if(activityStatus=="sedentary"){
+                    cal_count=2200;
+                }else if(activityStatus=="moderatelyActive"){
+                    cal_count=2600;
+                }else{
+                    cal_count=3000;
+                }
+            }
+        }else if(a>=19 && a<=30){
+            if (gender == "Female") {
+                if(activityStatus=="sedentary"){
+                    cal_count=2000;
+                }else if(activityStatus=="moderatelyActive"){
+                    cal_count=2100;
+                }else{
+                    cal_count=2400;
+                }
+            }else{
+                if(activityStatus=="sedentary"){
+                    cal_count=2400;
+                }else if(activityStatus=="moderatelyActive"){
+                    cal_count=2700;
+                }else{
+                    cal_count=3000;
+                }
+            }
+        }else if(a>=31 && a<=50){
+            if (gender == "Female") {
+                if(activityStatus=="sedentary"){
+                    cal_count=1800;
+                }else if(activityStatus=="moderatelyActive"){
+                    cal_count=2000;
+                }else{
+                    cal_count=2200;
+                }
+            }else{
+                if(activityStatus=="sedentary"){
+                    cal_count=2200;
+                }else if(activityStatus=="moderatelyActive"){
+                    cal_count=2500;
+                }else{
+                    cal_count=2900;
+                }
+            }
+        }else if(a>=51){
+            if (gender == "Female") {
+                if(activityStatus=="sedentary"){
+                    cal_count=1600;
+                }else if(activityStatus=="moderatelyActive"){
+                    cal_count=1800;
+                }else{
+                    cal_count=2100;
+                }
+            }else{
+                if(activityStatus=="sedentary"){
+                    cal_count=2000;
+                }else if(activityStatus=="moderatelyActive"){
+                    cal_count=2300;
+                }else{
+                    cal_count=2600;
+                }
+            }
+        }
+    }
+
+    public void categoryAllocation(int bmi){
+        if(bmi<18.5){
+            obesity="Underweight";
+        }else if(bmi>=18.5 && bmi<=24.5){
+            obesity="Healthy";
+        }else if(bmi>=25 && bmi<=29.9){
+            obesity="Overweight";
+        }else if(bmi>=30){
+            obesity="Obese";
+        }
+    }
 
 }

@@ -45,6 +45,56 @@
             android:layout_height="wrap_content"
             android:hint="Enter your age"/>
 
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="What's your gender?"/>
+            <RadioButton
+                android:id="@+id/genderMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton
+                android:id="@+id/genderFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female"
+                android:onClick="onRadioButtonClicked"/>
+        </RadioGroup>
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How Active you are?"/>
+            <RadioButton
+                android:id="@+id/sedentary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sedentary"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton
+                android:id="@+id/moderatelyActive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Moderately Active"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton
+                android:id="@+id/Active"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active"
+                android:onClick="onRadioButtonClicked"/>
+        </RadioGroup>
+
         <Button
             android:id="@+id/btnBmi"
             android:layout_width="wrap_content"
