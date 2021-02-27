@@ -1,5 +1,6 @@
 package com.example.healthtracker;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,14 +9,22 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.healthtracker.Models.Prevalent;
 import com.example.healthtracker.Models.Users;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -31,10 +40,12 @@ public class MentalHealthActivity extends AppCompatActivity {
     Button btnRegister;
     String gender,locationType,fieldOfStudy,insomnia,screenTime;//headache = fatigue
 
+   // TextView resMentalHealth;
     String age,stressLevel,socialCircle,headache,energyLevel,physicalActivity,anxietyAttacks,growthRate,alcoholIntake,mentalHealth;
     String suicidalThoughts,mentalIllness;
     //RadioButton genderMale,genderFemale,genderOther,hdevcity,mdevcity,ldevcity,stress1,stress2,stress3,stress4,stress5;
-    Users userdata=Prevalent.currentOnlineUser;
+    //Users userdata=Prevalent.currentOnlineUser;
+    Users userdata=new Users("Anusha Mittal","9643825069","anusha");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +53,15 @@ public class MentalHealthActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mental_health);
         btnRegister=findViewById(R.id.btnRegister);
         etAge=findViewById(R.id.age);
+     //   resMentalHealth=findViewById(R.id.resMentalHealth);
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 age=etAge.getText().toString();
-             //   addInDatabase();
+                Intent intent=new Intent(MentalHealthActivity.this,MentalHealthResultActivity.class);
+                startActivity(intent);
+                addInDatabase();
             }
         });
     }
@@ -345,70 +359,70 @@ public class MentalHealthActivity extends AppCompatActivity {
 
     }
 
-//    private void addInDatabase(){
-//        final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
-//
-//        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                if(userdata!=null && userdata.getNumber()!=null) {
-//                    String number = userdata.getNumber();
-//                    if (!dataSnapshot.child("users").child(number).child("Mental Health").exists()) {
-//                        HashMap<String, Object> map = new HashMap<>();
-////                    map.put("name", userdata.getName());
-////                    map.put("number", userdata.getNumber());
-////                    map.put("password", userdata.getPass());
-//                        map.put("age", age);
-//                        map.put("locationType", locationType);
-//                        map.put("stressLevel", stressLevel);
-//                        map.put("fieldOfStudy", fieldOfStudy);
-//                        map.put("insomnia", insomnia);
-//                        map.put("socialCircle", socialCircle);
-//                        map.put("headache", headache);
-//                        map.put("screenTime", screenTime);
-//                        map.put("suicidalThoughts", suicidalThoughts);
-//                        map.put("energyLevel", energyLevel);
-//                        map.put("physicalActivity", physicalActivity);
-//                        map.put("anxietyAttacks", anxietyAttacks);
-//                        map.put("growthRate", growthRate);
-//                        map.put("alcoholIntake", alcoholIntake);
-//                        map.put("mentalIllness", mentalIllness);
-//                        map.put("mentalHealth", mentalHealth);
-//
-//                        databaseReference.child("users").child(number).child("Mental Health").updateChildren(map)
-//                                .addOnCompleteListener(new OnCompleteListener<Void>() {
-//                                    @Override
-//                                    public void onComplete(@NonNull Task<Void> task) {
-//                                        if (task.isSuccessful()) {
-//                                            Toast.makeText(MentalHealthActivity.this, "Congratulations, your data is added!!", Toast.LENGTH_SHORT).show();
-//                                            //             progressDialog.dismiss();
-////                                        Intent intent = new Intent(MentalHealthActivity.this, HomeActivity.class);
-////                                        startActivity(intent);
-//                                        } else {
-//                                            //  progressDialog.dismiss();
-//                                            Toast.makeText(MentalHealthActivity.this, "there seems to be some error, try again!", Toast.LENGTH_SHORT).show();
-////                                        Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
-////                                        startActivity(intent);
-//                                        }
-//                                    }
-//                                });
-//
-//                    } else {
-//                        Toast.makeText(MentalHealthActivity.this, "this data already exists", Toast.LENGTH_SHORT).show();
-//                        //       progressDialog.dismiss();
-////                    Toast.makeText(RegisterActivity.this, "Please try again with some another number", Toast.LENGTH_SHORT).show();
-////                    Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
-////                    startActivity(intent);
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-//    }
+    private void addInDatabase(){
+        final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(userdata!=null && userdata.getNumber()!=null) {
+                    String number = userdata.getNumber();
+                    if (!dataSnapshot.child("users").child(number).child("Mental Health").exists()) {
+                        HashMap<String, Object> map = new HashMap<>();
+//                    map.put("name", userdata.getName());
+//                    map.put("number", userdata.getNumber());
+//                    map.put("password", userdata.getPass());
+                        map.put("age", age);
+                        map.put("locationType", locationType);
+                        map.put("stressLevel", stressLevel);
+                        map.put("fieldOfStudy", fieldOfStudy);
+                        map.put("insomnia", insomnia);
+                        map.put("socialCircle", socialCircle);
+                        map.put("headache", headache);
+                        map.put("screenTime", screenTime);
+                        map.put("suicidalThoughts", suicidalThoughts);
+                        map.put("energyLevel", energyLevel);
+                        map.put("physicalActivity", physicalActivity);
+                        map.put("anxietyAttacks", anxietyAttacks);
+                        map.put("growthRate", growthRate);
+                        map.put("alcoholIntake", alcoholIntake);
+                        map.put("mentalIllness", mentalIllness);
+                        map.put("mentalHealth", mentalHealth);
+
+                        databaseReference.child("users").child(number).child("Mental Health").updateChildren(map)
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()) {
+                                            Toast.makeText(MentalHealthActivity.this, "Congratulations, your data is added!!", Toast.LENGTH_SHORT).show();
+                                            //             progressDialog.dismiss();
+//                                        Intent intent = new Intent(MentalHealthActivity.this, HomeActivity.class);
+//                                        startActivity(intent);
+                                        } else {
+                                            //  progressDialog.dismiss();
+                                            Toast.makeText(MentalHealthActivity.this, "there seems to be some error, try again!", Toast.LENGTH_SHORT).show();
+//                                        Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
+//                                        startActivity(intent);
+                                        }
+                                    }
+                                });
+
+                    } else {
+                        Toast.makeText(MentalHealthActivity.this, "this data already exists", Toast.LENGTH_SHORT).show();
+                        //       progressDialog.dismiss();
+//                    Toast.makeText(RegisterActivity.this, "Please try again with some another number", Toast.LENGTH_SHORT).show();
+//                    Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
+//                    startActivity(intent);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
 
     public void httpReq(View view)
     {
@@ -439,7 +453,10 @@ public class MentalHealthActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         try {
-                            textView.setText(response.body().string());
+                            Intent i = new Intent(MentalHealthActivity.this, MentalHealthResultActivity.class);
+                            String result=response.body().string();
+                            i.putExtra("result", result);
+                            startActivity(i);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
