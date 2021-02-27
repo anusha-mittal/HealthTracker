@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.healthtracker.Models.Prevalent;
 import com.example.healthtracker.Models.Users;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -29,8 +30,8 @@ public class PhysicalHealthActivity extends AppCompatActivity {
     EditText etHeight,etWeight,etAge;
     Button btnBmi,btnCalorie;
 
-   // Users userdata= Prevalent.currentOnlineUser;
-    Users userdata=new Users("Anusha Mittal","9643825069","anusha");
+    Users userdata= Prevalent.currentOnlineUser;
+   // Users userdata=new Users("Anusha Mittal","9643825069","anusha");
     private ProgressDialog progressDialog;
 
     public static double bmi;
