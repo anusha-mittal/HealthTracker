@@ -22,7 +22,7 @@ public class AddItemActivity extends AppCompatActivity {//implements LoaderCallb
         Intent intentThatStartedThis = getIntent();
         int bmi= intentThatStartedThis.getIntExtra("bmi", 0);
         int cal_count= intentThatStartedThis.getIntExtra("cal_count", 0);
-        int obesity= intentThatStartedThis.getIntExtra("obesity", 0);
+        String obesity= intentThatStartedThis.getStringExtra("obesity");
         calculatedBMI.setText(String.valueOf(bmi));
         reqdCalorie.setText(String.valueOf(cal_count));
         category.setText(obesity);

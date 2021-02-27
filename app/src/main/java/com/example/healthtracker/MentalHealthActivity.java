@@ -48,7 +48,7 @@ public class MentalHealthActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mental_health);
         btnRegister=findViewById(R.id.btnRegister);
-        etAge=findViewById(R.id.etAge);
+        etAge=findViewById(R.id.age);
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -358,53 +358,55 @@ public class MentalHealthActivity extends AppCompatActivity {
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String number=userdata.getNumber();
-                if (!dataSnapshot.child("users").child(number).child("Mental Health").exists()) {
-                    HashMap<String, Object> map = new HashMap<>();
+                if(userdata!=null && userdata.getNumber()!=null) {
+                    String number = userdata.getNumber();
+                    if (!dataSnapshot.child("users").child(number).child("Mental Health").exists()) {
+                        HashMap<String, Object> map = new HashMap<>();
 //                    map.put("name", userdata.getName());
 //                    map.put("number", userdata.getNumber());
 //                    map.put("password", userdata.getPass());
-                    map.put("age", age);
-                    map.put("locationType", locationType);
-                    map.put("stressLevel", stressLevel);
-                    map.put("fieldOfStudy", fieldOfStudy);
-                    map.put("insomnia", insomnia);
-                    map.put("socialCircle", socialCircle);
-                    map.put("headache", headache);
-                    map.put("screenTime", screenTime);
-                    map.put("suicidalThoughts", suicidalThoughts);
-                    map.put("energyLevel", energyLevel);
-                    map.put("physicalActivity", physicalActivity);
-                    map.put("anxietyAttacks", anxietyAttacks);
-                    map.put("growthRate", growthRate);
-                    map.put("alcoholIntake", alcoholIntake);
-                    map.put("mentalIllness", mentalIllness);
-                    map.put("mentalHealth", mentalHealth);
+                        map.put("age", age);
+                        map.put("locationType", locationType);
+                        map.put("stressLevel", stressLevel);
+                        map.put("fieldOfStudy", fieldOfStudy);
+                        map.put("insomnia", insomnia);
+                        map.put("socialCircle", socialCircle);
+                        map.put("headache", headache);
+                        map.put("screenTime", screenTime);
+                        map.put("suicidalThoughts", suicidalThoughts);
+                        map.put("energyLevel", energyLevel);
+                        map.put("physicalActivity", physicalActivity);
+                        map.put("anxietyAttacks", anxietyAttacks);
+                        map.put("growthRate", growthRate);
+                        map.put("alcoholIntake", alcoholIntake);
+                        map.put("mentalIllness", mentalIllness);
+                        map.put("mentalHealth", mentalHealth);
 
-                    databaseReference.child("users").child(number).child("Mental Health").updateChildren(map)
-                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()) {
-                                        Toast.makeText(MentalHealthActivity.this, "Congratulations, your data is added!!", Toast.LENGTH_SHORT).show();
-                           //             progressDialog.dismiss();
+                        databaseReference.child("users").child(number).child("Mental Health").updateChildren(map)
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()) {
+                                            Toast.makeText(MentalHealthActivity.this, "Congratulations, your data is added!!", Toast.LENGTH_SHORT).show();
+                                            //             progressDialog.dismiss();
 //                                        Intent intent = new Intent(MentalHealthActivity.this, HomeActivity.class);
 //                                        startActivity(intent);
-                                    } else {
-                                        //  progressDialog.dismiss();
-                                        Toast.makeText(MentalHealthActivity.this, "there seems to be some error, try again!", Toast.LENGTH_SHORT).show();
+                                        } else {
+                                            //  progressDialog.dismiss();
+                                            Toast.makeText(MentalHealthActivity.this, "there seems to be some error, try again!", Toast.LENGTH_SHORT).show();
 //                                        Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
 //                                        startActivity(intent);
+                                        }
                                     }
-                                }
-                            });
+                                });
 
-                } else {
-                    Toast.makeText(MentalHealthActivity.this, "this data already exists", Toast.LENGTH_SHORT).show();
-                    //       progressDialog.dismiss();
+                    } else {
+                        Toast.makeText(MentalHealthActivity.this, "this data already exists", Toast.LENGTH_SHORT).show();
+                        //       progressDialog.dismiss();
 //                    Toast.makeText(RegisterActivity.this, "Please try again with some another number", Toast.LENGTH_SHORT).show();
 //                    Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
 //                    startActivity(intent);
+                    }
                 }
             }
 

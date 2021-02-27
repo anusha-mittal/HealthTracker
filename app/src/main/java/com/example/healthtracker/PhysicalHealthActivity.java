@@ -52,7 +52,7 @@ public class PhysicalHealthActivity extends AppCompatActivity {
         //category=findViewById(R.id.category);
         progressDialog=new ProgressDialog(this);
 
-        btnBmi.setOnClickListener(new View.OnClickListener() {
+       btnBmi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String height=etHeight.getText().toString();
@@ -94,12 +94,12 @@ public class PhysicalHealthActivity extends AppCompatActivity {
             }
         });
 
-        btnCalorie.setOnClickListener(new View.OnClickListener() {
+       /* btnCalorie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //navigate to next activity
             }
-        });
+        });*/
     }
 
     public void onRadioButtonClicked(View view) {
@@ -140,7 +140,7 @@ public class PhysicalHealthActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String number="";
-                if(userdata.getNumber()!=null){
+                if(userdata!=null && userdata.getNumber()!=null){
                    number=userdata.getNumber();}
                 if (!dataSnapshot.child("users").child(number).child("Physical Health").exists()) {
                     HashMap<String, Object> map = new HashMap<>();
