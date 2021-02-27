@@ -1,13 +1,10 @@
 package com.example.healthtracker;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import static com.example.healthtracker.PhysicalHealthActivity.bmi;
-import static com.example.healthtracker.PhysicalHealthActivity.cal_count;
-import static com.example.healthtracker.PhysicalHealthActivity.obesity;
 
 public class AddItemActivity extends AppCompatActivity {//implements LoaderCallbacks<String> {
 
@@ -18,10 +15,18 @@ public class AddItemActivity extends AppCompatActivity {//implements LoaderCallb
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
+        reqdCalorie=findViewById(R.id.reqdCalorie);
+        calculatedBMI=findViewById(R.id.calculatedBMI);
+        category=findViewById(R.id.category);
+
+        Intent intentThatStartedThis = getIntent();
+        int bmi= intentThatStartedThis.getIntExtra("bmi", 0);
+        int cal_count= intentThatStartedThis.getIntExtra("cal_count", 0);
+        int obesity= intentThatStartedThis.getIntExtra("obesity", 0);
         calculatedBMI.setText(String.valueOf(bmi));
         reqdCalorie.setText(String.valueOf(cal_count));
         category.setText(obesity);
-        //getLoaderManager().initLoader(1, null, this).forceLoad();
+      //  getLoaderManager().initLoader(1, null, this).forceLoad();
 
     }
 
@@ -42,7 +47,6 @@ public class AddItemActivity extends AppCompatActivity {//implements LoaderCallb
     public void onLoaderReset(Loader<String> loader) {
 
     }*/
-
 }
 
 

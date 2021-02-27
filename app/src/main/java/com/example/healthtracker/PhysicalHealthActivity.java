@@ -81,8 +81,14 @@ public class PhysicalHealthActivity extends AppCompatActivity {
                 bmi = wt/(ht*ht);
                 calorieAllocation(a);
                 categoryAllocation(bmi);
-                Intent intent=new Intent(PhysicalHealthActivity.this,AddItemActivity.class);
-                startActivity(intent);
+//                reqdCalorie.setText(String.valueOf(cal_count));
+//                category.setText(obesity);
+
+                Intent i = new Intent(PhysicalHealthActivity.this, AddItemActivity.class);
+                i.putExtra("bmi", bmi);
+                i.putExtra("cal_count", cal_count);
+                i.putExtra("obesity", obesity);
+                startActivity(i);
 
 
             }
