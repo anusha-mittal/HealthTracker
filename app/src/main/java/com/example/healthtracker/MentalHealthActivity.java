@@ -28,8 +28,10 @@ import java.util.HashMap;
 
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class MentalHealthActivity extends AppCompatActivity {
@@ -39,7 +41,7 @@ public class MentalHealthActivity extends AppCompatActivity {
     String gender,locationType,fieldOfStudy,insomnia,screenTime;//headache = fatigue
 
     String age,stressLevel,socialCircle,headache,energyLevel,physicalActivity,anxietyAttacks,growthRate,alcoholIntake,mentalHealth;
-    Boolean suicidalThoughts,mentalIllness;
+    String suicidalThoughts,mentalIllness;
     //RadioButton genderMale,genderFemale,genderOther,hdevcity,mdevcity,ldevcity,stress1,stress2,stress3,stress4,stress5;
     Users userdata=Prevalent.currentOnlineUser;
 
@@ -184,11 +186,11 @@ public class MentalHealthActivity extends AppCompatActivity {
 
             case R.id.suicideyes:
                 if (checked)
-                    suicidalThoughts = true;
+                    suicidalThoughts = "yes";
                 break;
             case R.id.suicideno:
                 if (checked)
-                    suicidalThoughts = false;
+                    suicidalThoughts = "no";
                 break;
 
             case R.id.conc1:
@@ -320,11 +322,11 @@ public class MentalHealthActivity extends AppCompatActivity {
 
             case R.id.traumayes:
                 if (checked)
-                    mentalIllness = true;
+                    mentalIllness = "yes";
                 break;
             case R.id.traumano:
                 if (checked)
-                    mentalIllness=false;
+                    mentalIllness="no";
                 break;
 
             case R.id.mental1:
@@ -420,7 +422,19 @@ public class MentalHealthActivity extends AppCompatActivity {
     public void httpReq(View view)
     {
         OkHttpClient okHttpClient = new OkHttpClient();
-        Request request = new Request.Builder().url("https://bhavikarastogi07.github.io/Mental-Health-Rating-Prediction/").build();
+        RequestBody formbody=new FormBody.Builder().add("age",age)
+                .add("stress",stressLevel)
+                .add("insom",insomnia)
+                .add("social",socialCircle)
+                .add("head",headache)
+                .add("suicidal", suicidalThoughts)
+                .add("conc",energyLevel)
+                .add("phy",physicalActivity)
+                .add("anx",anxietyAttacks)
+                .add("grow",growthRate)
+                .add("ill",mentalIllness)
+                        .build();
+        Request request = new Request.Builder().url("https://mental-health-ratingprediction.herokuapp.com/form").post(formbody).build();
         okHttpClient.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NotNull Call call, @NotNull IOException e) {
@@ -430,7 +444,16 @@ public class MentalHealthActivity extends AppCompatActivity {
             @Override
             public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
                 TextView textView = (TextView)findViewById(R.id.resMentalHealth);
-                textView.setText(response.body().string());
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            textView.setText(response.body().string());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
             }
         });
     }
