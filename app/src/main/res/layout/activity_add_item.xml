@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AddItemActivity">
+    tools:context=".AddItemActivity"
+    android:background="#A8E9F1">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,7 +22,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="The amount of calories you should have: ">
+                android:text="The amount of calories you should have: "
+                android:textColor="@color/black">
             </TextView>
 
             <TextView
@@ -35,11 +37,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="14dp"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Your BMI is:  ">
+                android:text="Your BMI is:  "
+                android:textColor="@color/black">
             </TextView>
 
             <TextView
@@ -57,7 +61,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="According to your BMI you fall into:  ">
+            android:text="According to your BMI you fall into:  "
+            android:textColor="@color/black">
         </TextView>
 
         <TextView
@@ -72,13 +77,17 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ate something? ADD HERE: "/>
+            android:text="Ate something? ADD HERE: "
+            android:textSize="20dp"
+            android:padding="20dp"
+            android:textColor="@color/black"
+            android:textAllCaps="true"/>
 
 
         <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="enter food item"/>
+        android:hint="Enter food item"/>
 
 
         <Button

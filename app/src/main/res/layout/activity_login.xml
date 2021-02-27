@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:layout_margin="80dp"
+    android:background="#FDD6E3"
+    android:padding="80dp"
     tools:context=".LoginActivity">
 
     <LinearLayout
@@ -14,7 +15,10 @@
         android:orientation="vertical"
         android:layout_gravity="center">
 
-
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="128dp"
+            android:src="@drawable/healthcheck"/>
         <EditText
             android:id="@+id/etPhone"
             android:layout_width="match_parent"
