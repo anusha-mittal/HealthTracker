@@ -46,10 +46,10 @@ public class PhysicalHealthActivity extends AppCompatActivity {
         etWeight=findViewById(R.id.etWeight);
         etAge=findViewById(R.id.etAge);
         btnBmi=findViewById(R.id.btnBmi);
+        btnCalorie=findViewById(R.id.btnCalorie);
         reqdCalorie=findViewById(R.id.reqdCalorie);
         calculatedBMI=findViewById(R.id.calculatedBMI);
         category=findViewById(R.id.category);
-        btnCalorie=findViewById(R.id.btnCalorie);
         progressDialog=new ProgressDialog(this);
 
         btnBmi.setOnClickListener(new View.OnClickListener() {
@@ -132,7 +132,9 @@ public class PhysicalHealthActivity extends AppCompatActivity {
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String number=userdata.getNumber();
+                String number="";
+                if(userdata.getNumber()!=null){
+                   number=userdata.getNumber();}
                 if (!dataSnapshot.child("users").child(number).child("Physical Health").exists()) {
                     HashMap<String, Object> map = new HashMap<>();
                     map.put("height", height);
