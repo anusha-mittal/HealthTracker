@@ -13,6 +13,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.healthtracker.Models.Prevalent;
+import com.example.healthtracker.Models.Users;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
@@ -89,6 +91,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void validateUser(final String name, final String number, final String pass) {
+        Prevalent.currentOnlineUser=new Users(name,number,pass);
         final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
 
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {

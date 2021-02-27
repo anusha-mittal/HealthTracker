@@ -11,6 +11,10 @@ public class Users {
         this.number = number;
         this.pass = pass;
     }
+    public Users(String number, String pass) {
+        this.number = number;
+        this.pass = pass;
+    }
 
     public String getName() {
         return name;

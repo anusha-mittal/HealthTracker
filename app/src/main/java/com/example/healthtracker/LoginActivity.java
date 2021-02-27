@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.healthtracker.Models.Prevalent;
+import com.example.healthtracker.Models.Users;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -57,6 +59,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void login(final String number, final String pass) {
+        Prevalent.currentOnlineUser=new Users(number,pass);
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
         final DatabaseReference userNameRef = rootRef.child("users").child(number);
         ValueEventListener eventListener = new ValueEventListener() {

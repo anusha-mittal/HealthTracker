@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.healthtracker.Models.Prevalent;
 import com.example.healthtracker.Models.Users;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -44,8 +45,8 @@ public class MentalHealthActivity extends AppCompatActivity {
     String age,stressLevel,socialCircle,headache,energyLevel,physicalActivity,anxietyAttacks,growthRate,alcoholIntake,mentalHealth;
     String suicidalThoughts,mentalIllness;
     //RadioButton genderMale,genderFemale,genderOther,hdevcity,mdevcity,ldevcity,stress1,stress2,stress3,stress4,stress5;
-    //Users userdata=Prevalent.currentOnlineUser;
-    Users userdata=new Users("Anusha Mittal","9643825069","anusha");
+    Users userdata= Prevalent.currentOnlineUser;
+    //Users userdata=new Users("Anusha Mittal","9643825069","anusha");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -373,6 +374,7 @@ public class MentalHealthActivity extends AppCompatActivity {
 //                    map.put("number", userdata.getNumber());
 //                    map.put("password", userdata.getPass());
                         map.put("age", age);
+                        map.put("gender",gender);
                         map.put("locationType", locationType);
                         map.put("stressLevel", stressLevel);
                         map.put("fieldOfStudy", fieldOfStudy);
