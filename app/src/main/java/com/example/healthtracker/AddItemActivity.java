@@ -1,28 +1,31 @@
 package com.example.healthtracker;
 
-import android.content.Loader;
 import android.os.Bundle;
-
-import android.app.LoaderManager.LoaderCallbacks;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class AddItemActivity extends AppCompatActivity implements LoaderCallbacks<String> {
+import static com.example.healthtracker.PhysicalHealthActivity.bmi;
+import static com.example.healthtracker.PhysicalHealthActivity.cal_count;
+import static com.example.healthtracker.PhysicalHealthActivity.obesity;
+
+public class AddItemActivity extends AppCompatActivity {//implements LoaderCallbacks<String> {
 
     public static final String LOG_TAG = AddItemActivity.class.getSimpleName();
-    public static final String REQUEST_URL = "https://api.spoonacular.com/recipes/716429/information";  //fill id
-
+    public static final String REQUEST_URL = "";  //fill id
+    TextView reqdCalorie,calculatedBMI,category;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
-
-        getLoaderManager().initLoader(1, null, this).forceLoad();
+        calculatedBMI.setText(String.valueOf(bmi));
+        reqdCalorie.setText(String.valueOf(cal_count));
+        category.setText(obesity);
+        //getLoaderManager().initLoader(1, null, this).forceLoad();
 
     }
 
-    @Override
+    /*@Override
     public Loader<String> onCreateLoader(int id, Bundle args) {
         return null;
     }
@@ -38,7 +41,7 @@ public class AddItemActivity extends AppCompatActivity implements LoaderCallback
     @Override
     public void onLoaderReset(Loader<String> loader) {
 
-    }
+    }*/
 
 }
 

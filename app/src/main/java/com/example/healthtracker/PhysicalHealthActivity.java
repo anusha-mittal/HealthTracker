@@ -1,13 +1,13 @@
 package com.example.healthtracker;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,13 +29,13 @@ public class PhysicalHealthActivity extends AppCompatActivity {
 
     EditText etHeight,etWeight,etAge;
     Button btnBmi,btnCalorie;
-    TextView reqdCalorie,calculatedBMI,category;
+
     Users userdata= Prevalent.currentOnlineUser;
     private ProgressDialog progressDialog;
 
-    double bmi;
-    int cal_count;
-    String obesity,gender,activityStatus;
+    public static double bmi;
+    public static int cal_count;
+    public static String obesity,gender,activityStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +46,10 @@ public class PhysicalHealthActivity extends AppCompatActivity {
         etWeight=findViewById(R.id.etWeight);
         etAge=findViewById(R.id.etAge);
         btnBmi=findViewById(R.id.btnBmi);
-        btnCalorie=findViewById(R.id.btnCalorie);
-        reqdCalorie=findViewById(R.id.reqdCalorie);
-        calculatedBMI=findViewById(R.id.calculatedBMI);
-        category=findViewById(R.id.category);
+        //btnCalorie=findViewById(R.id.btnCalorie);
+        //reqdCalorie=findViewById(R.id.reqdCalorie);
+        //calculatedBMI=findViewById(R.id.calculatedBMI);
+        //category=findViewById(R.id.category);
         progressDialog=new ProgressDialog(this);
 
         btnBmi.setOnClickListener(new View.OnClickListener() {
@@ -81,9 +81,10 @@ public class PhysicalHealthActivity extends AppCompatActivity {
                 bmi = wt/(ht*ht);
                 calorieAllocation(a);
                 categoryAllocation(bmi);
-                calculatedBMI.setText(String.valueOf(bmi));
-                reqdCalorie.setText(String.valueOf(cal_count));
-                category.setText(obesity);
+                Intent intent=new Intent(PhysicalHealthActivity.this,AddItemActivity.class);
+                startActivity(intent);
+
+
             }
         });
 
