@@ -11,90 +11,87 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="top"
-        android:layout_margin="40dp">
+        android:layout_gravity="center_vertical"
+        android:layout_margin="40dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="The amount of calories you should have: "
-                android:textColor="@color/black">
-            </TextView>
+                android:textColor="@color/black"></TextView>
 
             <TextView
                 android:id="@+id/reqdCalorie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="2000 cal">
-            </TextView>
+                android:hint="2000 cal"></TextView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="14dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="14dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Your BMI is:  "
-                android:textColor="@color/black">
-            </TextView>
+                android:textColor="@color/black"></TextView>
 
             <TextView
                 android:id="@+id/calculatedBMI"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="24">
-            </TextView>
+                android:hint="24"></TextView>
         </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="According to your BMI you fall into:  "
-            android:textColor="@color/black">
-        </TextView>
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/category"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Underweight">
-        </TextView>
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="According to your BMI you fall into:  "
+                android:textColor="@color/black"></TextView>
+
+            <TextView
+                android:id="@+id/category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Underweight"></TextView>
+        </LinearLayout>
 
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ate something? ADD HERE: "
-            android:textSize="20dp"
             android:padding="20dp"
+            android:text="Ate something? ADD HERE: "
+            android:textAllCaps="true"
             android:textColor="@color/black"
-            android:textAllCaps="true"/>
+            android:textSize="20dp" />
 
 
         <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter food item"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter food item" />
 
 
         <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Add to today's total"/>
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Add to today's total" />
     </LinearLayout>
 </LinearLayout>

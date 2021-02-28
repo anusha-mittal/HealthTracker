@@ -62,6 +62,45 @@ public class MentalHealthActivity extends AppCompatActivity {
                 Intent intent=new Intent(MentalHealthActivity.this,MentalHealthResultActivity.class);
                 startActivity(intent);
                 addInDatabase();
+                OkHttpClient okHttpClient = new OkHttpClient();
+                RequestBody formbody=new FormBody.Builder()
+                        .add("age",age)
+                        .add("stress",String.valueOf(stressLevel))
+                        .add("insom",insomnia)
+                        .add("social",String.valueOf(socialCircle))
+                        .add("head",String.valueOf(headache))
+                        .add("suicidal", suicidalThoughts)
+                        .add("conc",String.valueOf(energyLevel))
+                        .add("phy",String.valueOf(physicalActivity))
+                        .add("anx",String.valueOf(anxietyAttacks))
+                        .add("grow",String.valueOf(growthRate))
+                        .add("ill",mentalIllness)
+                        .build();
+                Request request = new Request.Builder().url("https://mental-health-ratingprediction.herokuapp.com/").post(formbody).build();
+                okHttpClient.newCall(request).enqueue(new Callback() {
+                    @Override
+                    public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                        Toast.makeText(MentalHealthActivity.this,"URL not found",Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                        // TextView textView = (TextView)findViewById(R.id.resMentalHealth);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                try {
+                                    Intent i = new Intent(MentalHealthActivity.this, MentalHealthResultActivity.class);
+                                    String result=response.body().string();
+                                    i.putExtra("result", result);
+                                    startActivity(i);
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
+                    }
+                });
             }
         });
     }
@@ -425,47 +464,47 @@ public class MentalHealthActivity extends AppCompatActivity {
         });
     }
 
-    public void httpReq(View view)
-    {
-        OkHttpClient okHttpClient = new OkHttpClient();
-        RequestBody formbody=new FormBody.Builder()
-                .add("age",age)
-                .add("stress",String.valueOf(stressLevel))
-                .add("insom",insomnia)
-                .add("social",String.valueOf(socialCircle))
-                .add("head",String.valueOf(headache))
-                .add("suicidal", suicidalThoughts)
-                .add("conc",String.valueOf(energyLevel))
-                .add("phy",String.valueOf(physicalActivity))
-                .add("anx",String.valueOf(anxietyAttacks))
-                .add("grow",String.valueOf(growthRate))
-                .add("ill",mentalIllness)
-                        .build();
-        Request request = new Request.Builder().url("https://mental-health-ratingprediction.herokuapp.com/").post(formbody).build();
-        okHttpClient.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(@NotNull Call call, @NotNull IOException e) {
-                Toast.makeText(MentalHealthActivity.this,"URL not found",Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
-               // TextView textView = (TextView)findViewById(R.id.resMentalHealth);
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            Intent i = new Intent(MentalHealthActivity.this, MentalHealthResultActivity.class);
-                            String result=response.body().string();
-                            i.putExtra("3", result);
-                            startActivity(i);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
-            }
-        });
-    }
+//    public void httpReq(View view)
+//    {
+//        OkHttpClient okHttpClient = new OkHttpClient();
+//        RequestBody formbody=new FormBody.Builder()
+//                .add("age",age)
+//                .add("stress",String.valueOf(stressLevel))
+//                .add("insom",insomnia)
+//                .add("social",String.valueOf(socialCircle))
+//                .add("head",String.valueOf(headache))
+//                .add("suicidal", suicidalThoughts)
+//                .add("conc",String.valueOf(energyLevel))
+//                .add("phy",String.valueOf(physicalActivity))
+//                .add("anx",String.valueOf(anxietyAttacks))
+//                .add("grow",String.valueOf(growthRate))
+//                .add("ill",mentalIllness)
+//                        .build();
+//        Request request = new Request.Builder().url("https://mental-health-ratingprediction.herokuapp.com/").post(formbody).build();
+//        okHttpClient.newCall(request).enqueue(new Callback() {
+//            @Override
+//            public void onFailure(@NotNull Call call, @NotNull IOException e) {
+//                Toast.makeText(MentalHealthActivity.this,"URL not found",Toast.LENGTH_LONG).show();
+//            }
+//
+//            @Override
+//            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+//               // TextView textView = (TextView)findViewById(R.id.resMentalHealth);
+//                runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        try {
+//                            Intent i = new Intent(MentalHealthActivity.this, MentalHealthResultActivity.class);
+//                            String result=response.body().string();
+//                            i.putExtra("3", result);
+//                            startActivity(i);
+//                        } catch (IOException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                });
+//            }
+//        });
+//    }
 
 }
