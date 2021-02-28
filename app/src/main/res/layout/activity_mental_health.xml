@@ -561,46 +561,46 @@
             </RadioGroup>
 
 
-            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="How will you rate your mental health on a scale from 1-5? (5- very good)"/>
+<!--            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical">-->
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="How will you rate your mental health on a scale from 1-5? (5- very good)"/>-->
 
-                <RadioButton
-                    android:id="@+id/mental1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    android:onClick="onRadioButtonClicked"/>
-                <RadioButton
-                    android:id="@+id/mental2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="2"
-                    android:onClick="onRadioButtonClicked"/>
-                <RadioButton
-                    android:id="@+id/mental3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="3"
-                    android:onClick="onRadioButtonClicked"/>
-                <RadioButton
-                    android:id="@+id/mental4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4"
-                    android:onClick="onRadioButtonClicked"/>
-                <RadioButton
-                    android:id="@+id/mental5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="5"
-                    android:onClick="onRadioButtonClicked"/>
-            </RadioGroup>
+<!--                <RadioButton-->
+<!--                    android:id="@+id/mental1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="1"-->
+<!--                    android:onClick="onRadioButtonClicked"/>-->
+<!--                <RadioButton-->
+<!--                    android:id="@+id/mental2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="2"-->
+<!--                    android:onClick="onRadioButtonClicked"/>-->
+<!--                <RadioButton-->
+<!--                    android:id="@+id/mental3"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="3"-->
+<!--                    android:onClick="onRadioButtonClicked"/>-->
+<!--                <RadioButton-->
+<!--                    android:id="@+id/mental4"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="4"-->
+<!--                    android:onClick="onRadioButtonClicked"/>-->
+<!--                <RadioButton-->
+<!--                    android:id="@+id/mental5"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="5"-->
+<!--                    android:onClick="onRadioButtonClicked"/>-->
+<!--            </RadioGroup>-->
 
             <Button
                 android:id="@+id/btnRegister"

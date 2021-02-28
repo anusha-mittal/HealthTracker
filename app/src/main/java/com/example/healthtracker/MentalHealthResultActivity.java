@@ -2,8 +2,6 @@ package com.example.healthtracker;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,20 +20,20 @@ public class MentalHealthResultActivity extends AppCompatActivity {
         Intent intentThatStartedThis = getIntent();
         String result= intentThatStartedThis.getStringExtra("result");
         resMentalHealth.setText(result);
-        mentalStatus = findViewById(R.id.mentalstatus);
-        Button consultpsy = (Button)findViewById(R.id.consultpsych);
-        if(result.equals("1"))
-        {
-            mentalStatus.setText("We advise you to consult a psychiatrist to improve your mental health");
-            consultpsy.setVisibility(View.VISIBLE);
-        }
-        else if(result.equals("2"))
-        {
-            mentalStatus.setText("Your mental health is average");
-        }
-        else if(result.equals("3"))
-        {
-            mentalStatus.setText("You are doing good!");
-        }
+//        mentalStatus = findViewById(R.id.mentalstatus);
+//        Button consultpsy = (Button)findViewById(R.id.consultpsych);
+//        if(result.equals("1"))
+//        {
+//            mentalStatus.setText("We advise you to consult a psychiatrist to improve your mental health");
+//            consultpsy.setVisibility(View.VISIBLE);
+//        }
+//        else if(result.equals("2"))
+//        {
+//            mentalStatus.setText("Your mental health is average");
+//        }
+//        else if(result.equals("3"))
+//        {
+//            mentalStatus.setText("You are doing good!");
+//        }
     }
 }

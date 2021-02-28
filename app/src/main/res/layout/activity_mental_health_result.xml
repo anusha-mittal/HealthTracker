@@ -5,15 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:background="#A8E9F1"
     android:padding="16dp"
+    android:layout_gravity="top"
     tools:context=".MentalHealthResultActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="center">
+        android:paddingTop="30dp"
+        android:layout_gravity="top">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,18 +27,18 @@
             android:layout_height="wrap_content"
             android:textSize="32dp"
             android:textColor="@color/black"/>
-        <TextView
-            android:id="@+id/mentalstatus"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="mental status"/>
 
         <Button
+            android:layout_marginTop="40dp"
             android:id="@+id/consultpsych"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Consult a psychiatrist"
-            android:visibility="invisible"
         />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/piechart"/>
     </LinearLayout>
 </LinearLayout>

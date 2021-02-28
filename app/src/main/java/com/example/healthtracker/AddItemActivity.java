@@ -21,10 +21,10 @@ AddItemActivity extends AppCompatActivity {//implements LoaderCallbacks<String> 
         category=findViewById(R.id.category);
 
         Intent intentThatStartedThis = getIntent();
-        int bmi= intentThatStartedThis.getIntExtra("bmi", 0);
+     //   int bmi= intentThatStartedThis.getIntExtra("bmi", 0);
         int cal_count= intentThatStartedThis.getIntExtra("cal_count", 0);
         String obesity= intentThatStartedThis.getStringExtra("obesity");
-        calculatedBMI.setText(String.valueOf(bmi));
+      //  calculatedBMI.setText(String.valueOf(bmi));
         reqdCalorie.setText(String.valueOf(cal_count));
         category.setText(obesity);
       //  getLoaderManager().initLoader(1, null, this).forceLoad();

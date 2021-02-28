@@ -11,66 +11,65 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center">
+        android:layout_height="591dp"
+        android:layout_gravity="top"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="Register"
             android:layout_margin="52dp"
-            android:textAllCaps="true"
             android:fontFamily="sans-serif-light"
-            android:textSize="28sp"/>
+            android:text="Register"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="28sp" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="128dp"
-            android:src="@drawable/healthcheck"/>
+            android:src="@drawable/healthcheck" />
 
         <EditText
             android:id="@+id/etName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:hint="Enter name"
             android:layout_margin="10dp"
-            />
+            android:hint="Enter name" />
 
         <EditText
             android:id="@+id/etNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:hint="Enter Phone number"
             android:layout_margin="10dp"
-            />
+            android:hint="Enter Phone number" />
+
         <EditText
             android:id="@+id/etPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:hint="Enter Password"
             android:layout_margin="10dp"
-            />
+            android:hint="Enter Password" />
+
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:text="Sign up"/>
+            android:text="Sign up" />
 
         <TextView
             android:id="@+id/tvLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="14sp"
+            android:text="Already Registered, Login here!"
             android:textColor="@color/black"
-            android:text="Already Registered, Login here!" />
+            android:textSize="14sp" />
 
     </LinearLayout>
 

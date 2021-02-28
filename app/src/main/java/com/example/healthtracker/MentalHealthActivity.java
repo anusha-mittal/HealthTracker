@@ -373,26 +373,6 @@ public class MentalHealthActivity extends AppCompatActivity {
                     mentalIllness="No";
                 break;
 
-            case R.id.mental1:
-                if (checked)
-                    mentalHealth = "1";
-                break;
-            case R.id.mental2:
-                if (checked)
-                    mentalHealth ="2";
-                break;
-            case R.id.mental3:
-                if (checked)
-                    mentalHealth = "3";
-                break;
-            case R.id.mental4:
-                if (checked)
-                    mentalHealth ="4";
-                break;
-            case R.id.mental5:
-                if (checked)
-                    mentalHealth = "5";
-                break;
         }
 
 
@@ -427,7 +407,7 @@ public class MentalHealthActivity extends AppCompatActivity {
                         map.put("growthRate", growthRate);
                         map.put("alcoholIntake", alcoholIntake);
                         map.put("mentalIllness", mentalIllness);
-                        map.put("mentalHealth", mentalHealth);
+                      //  map.put("mentalHealth", mentalHealth);
 
                         databaseReference.child("users").child(number).child("Mental Health").updateChildren(map)
                                 .addOnCompleteListener(new OnCompleteListener<Void>() {
