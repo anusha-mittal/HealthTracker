@@ -6,7 +6,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class AddItemActivity extends AppCompatActivity {//implements LoaderCallbacks<String> {
+public class
+AddItemActivity extends AppCompatActivity {//implements LoaderCallbacks<String> {
 
     public static final String LOG_TAG = AddItemActivity.class.getSimpleName();
     public static final String REQUEST_URL = "";  //fill id

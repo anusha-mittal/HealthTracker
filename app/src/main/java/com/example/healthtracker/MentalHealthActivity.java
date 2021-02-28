@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -429,7 +428,8 @@ public class MentalHealthActivity extends AppCompatActivity {
     public void httpReq(View view)
     {
         OkHttpClient okHttpClient = new OkHttpClient();
-        RequestBody formbody=new FormBody.Builder().add("age",age)
+        RequestBody formbody=new FormBody.Builder()
+                .add("age",age)
                 .add("stress",String.valueOf(stressLevel))
                 .add("insom",insomnia)
                 .add("social",String.valueOf(socialCircle))
@@ -441,7 +441,7 @@ public class MentalHealthActivity extends AppCompatActivity {
                 .add("grow",String.valueOf(growthRate))
                 .add("ill",mentalIllness)
                         .build();
-        Request request = new Request.Builder().url("https://mental-health-ratingprediction.herokuapp.com/form").post(formbody).build();
+        Request request = new Request.Builder().url("https://mental-health-ratingprediction.herokuapp.com/").post(formbody).build();
         okHttpClient.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NotNull Call call, @NotNull IOException e) {
@@ -450,7 +450,7 @@ public class MentalHealthActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
-                TextView textView = (TextView)findViewById(R.id.resMentalHealth);
+               // TextView textView = (TextView)findViewById(R.id.resMentalHealth);
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
