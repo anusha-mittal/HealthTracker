@@ -55,15 +55,15 @@ public class MentalHealthActivity extends AppCompatActivity {
         etAge=findViewById(R.id.age);
      //   resMentalHealth=findViewById(R.id.resMentalHealth);
 
-//        btnRegister.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                age=etAge.getText().toString();
-//                Intent intent=new Intent(MentalHealthActivity.this,MentalHealthResultActivity.class);
-//                startActivity(intent);
-//                addInDatabase();
-//            }
-//        });
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                age=etAge.getText().toString();
+                Intent intent=new Intent(MentalHealthActivity.this,MentalHealthResultActivity.class);
+                startActivity(intent);
+                addInDatabase();
+            }
+        });
     }
 
     //onradio
