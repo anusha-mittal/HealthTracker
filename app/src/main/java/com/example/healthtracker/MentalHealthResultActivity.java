@@ -17,7 +17,7 @@ public class MentalHealthResultActivity extends AppCompatActivity {
 
         resMentalHealth=findViewById(R.id.resMentalHealth);
         Intent intentThatStartedThis = getIntent();
-        String result= intentThatStartedThis.getStringExtra("result");
+        String result= intentThatStartedThis.getStringExtra("3");
         resMentalHealth.setText(result);
     }
 }
