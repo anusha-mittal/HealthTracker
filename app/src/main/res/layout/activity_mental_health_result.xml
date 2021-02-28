@@ -15,16 +15,29 @@
         android:orientation="vertical"
         android:layout_gravity="center">
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Your mental health status score is:"
             android:textSize="22dp"
             android:textColor="@color/black"/>
         <TextView
             android:id="@+id/resMentalHealth"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="32dp"
             android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/mentalstatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="mental status"/>
+
+        <Button
+            android:id="@+id/consultpsych"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Consult a psychiatrist"
+            android:visibility="invisible"
+        />
     </LinearLayout>
 </LinearLayout>

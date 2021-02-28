@@ -1,80 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".AddItemActivity"
-    android:background="#A8E9F1">
+    android:background="@drawable/foodbg2">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:layout_gravity="center_vertical"
+        tools:context=".AddItemActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
         android:layout_margin="40dp"
-        android:orientation="vertical">
+        android:padding="20dp"
+        android:background="#A8F5F9FA">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="The amount of calories you should have: "
+                android:textSize="15sp"
                 android:textColor="@color/black"></TextView>
 
             <TextView
                 android:id="@+id/reqdCalorie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="2000 cal"></TextView>
+                android:textSize="18sp"
+                android:hint="2000 cal"
+                android:textColor="@color/black"></TextView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="14dp">
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Your BMI is:  "
-                android:textColor="@color/black"></TextView>
+                android:textColor="@color/black"
+                android:textSize="15sp"></TextView>
 
             <TextView
                 android:id="@+id/calculatedBMI"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="24"></TextView>
+                android:hint="24"
+                android:textSize="18sp"></TextView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="According to your BMI you fall into:  "
+                android:textSize="15sp"
                 android:textColor="@color/black"></TextView>
 
             <TextView
                 android:id="@+id/category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Underweight"></TextView>
+                android:textSize="18sp"
+                android:hint="Normal"></TextView>
         </LinearLayout>
 
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
+            android:layout_margin="4dp"
             android:text="Ate something? ADD HERE: "
             android:textAllCaps="true"
             android:textColor="@color/black"
@@ -94,4 +108,5 @@
             android:layout_gravity="center"
             android:text="Add to today's total" />
     </LinearLayout>
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>
