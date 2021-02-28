@@ -55,15 +55,15 @@ public class MentalHealthActivity extends AppCompatActivity {
         etAge=findViewById(R.id.age);
      //   resMentalHealth=findViewById(R.id.resMentalHealth);
 
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                age=etAge.getText().toString();
-                Intent intent=new Intent(MentalHealthActivity.this,MentalHealthResultActivity.class);
-                startActivity(intent);
-                addInDatabase();
-            }
-        });
+//        btnRegister.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                age=etAge.getText().toString();
+//                Intent intent=new Intent(MentalHealthActivity.this,MentalHealthResultActivity.class);
+//                startActivity(intent);
+//                addInDatabase();
+//            }
+//        });
     }
 
     //onradio
@@ -457,7 +457,7 @@ public class MentalHealthActivity extends AppCompatActivity {
                         try {
                             Intent i = new Intent(MentalHealthActivity.this, MentalHealthResultActivity.class);
                             String result=response.body().string();
-                            i.putExtra("result", result);
+                            i.putExtra("3", result);
                             startActivity(i);
                         } catch (IOException e) {
                             e.printStackTrace();
