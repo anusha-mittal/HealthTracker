@@ -3,24 +3,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/backgrd2">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
         tools:context=".MentalHealthActivity">
 
         <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        android:layout_margin="40dp"
-        android:padding="20dp"
-        android:background="#BFF5F9FA">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="top">
 
             <EditText
                 android:id="@+id/age"
@@ -38,8 +34,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
                     android:text="What's your gender?"/>
                 <RadioButton
                     android:id="@+id/genderMale"
@@ -68,8 +62,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
                     android:text="What is the Location type of your college ? "/>
                 <RadioButton
                     android:id="@+id/hdevcity"
@@ -98,8 +90,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
                     android:text="How stressed do you feel on a daily basis during the academic year? (1- Minimum Stress) "/>
 
                 <RadioButton
@@ -141,8 +131,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
                     android:text="What is your Field of Study?"/>
 
                 <RadioButton
@@ -172,8 +160,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
                     android:text="Do you experience insomnia?"/>
 
                 <RadioButton
@@ -203,8 +189,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
                     android:text="What can you say about your social circle? ( 5 - Highly Contained, excellent relations) "/>
 
                 <RadioButton
@@ -246,8 +230,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
                     android:text="How often do you experience headache and fatigue? (5- Very Often)"/>
 
                 <RadioButton
@@ -289,8 +271,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
                     android:text="What is your Screen-Time?"/>
 
                 <RadioButton
@@ -326,8 +306,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
                     android:text="Did you ever have any suicidal thoughts?"/>
 
                 <RadioButton
@@ -353,8 +331,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
                     android:text="Rate your concentration and energy level. (5 -High concentration and energy levels)"/>
 
                 <RadioButton
@@ -398,8 +374,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
                     android:text="How often do you indulge in some heavy physical activity? (5 -daily for a few hours) "/>
 
                 <RadioButton
@@ -443,8 +417,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
                     android:text="How often do you suffer from anxiety and panic attacks ? (5 - Very often)"/>
 
                 <RadioButton
@@ -488,8 +460,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
                     android:text="How has been your growth rate over the last few years? (5 -excellent growth)"/>
 
                 <RadioButton
@@ -532,8 +502,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
                     android:text="How will you rate your alcohol or drugs intake?"/>
 
                 <RadioButton
@@ -575,8 +543,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
                     android:text="Do you have a history of mental illness or any traumatic experience?"/>
 
                 <RadioButton
@@ -602,8 +568,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
                     android:text="How will you rate your mental health on a scale from 1-5? (5- very good)"/>
 
                 <RadioButton
