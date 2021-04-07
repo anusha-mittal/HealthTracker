@@ -5,6 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/foodbg2">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Physical health Questiionnaire"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +22,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_gravity="center"
-            android:layout_margin="40dp"
+            android:layout_margin="10dp"
             android:padding="20dp"
             android:background="#A8F5F9FA">
 
@@ -26,34 +30,43 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Enter your height"
+                android:fontFamily="sans-serif-light"
+                android:textSize="21sp"
                 android:textColor="@color/black" />
             <EditText
                 android:id="@+id/etHeight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter height in meters"/>
+                android:background="@drawable/et_style"
+                android:hint="Height in meters"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:textSize="21sp"
                 android:textColor="@color/black"
                 android:text="Enter your weight"/>
             <EditText
                 android:id="@+id/etWeight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter weight in kgs"/>
+                android:hint="Weight in kgs"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
-                android:text="Enter your Age" />
+                android:fontFamily="sans-serif-light"
+                android:textSize="21sp"
+                android:text="Enter your age" />
             <EditText
                 android:id="@+id/etAge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter your age"/>
+                android:fontFamily="sans-serif-light"
+                android:textSize="21sp"
+                android:hint="Age"/>
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
@@ -63,18 +76,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="21sp"
                     android:text="What's your gender?"/>
                 <RadioButton
                     android:id="@+id/genderMale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Male"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="21sp"
                     android:onClick="onRadioButtonClicked"/>
                 <RadioButton
                     android:id="@+id/genderFemale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Female"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="21sp"
                     android:onClick="onRadioButtonClicked"/>
             </RadioGroup>
 
@@ -86,23 +105,31 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="21sp"
                     android:text="How active you are?"/>
                 <RadioButton
                     android:id="@+id/sedentary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sedentary"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="21sp"
                     android:onClick="onRadioButtonClicked"/>
                 <RadioButton
                     android:id="@+id/moderatelyActive"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="21sp"
                     android:text="Moderately Active"
                     android:onClick="onRadioButtonClicked"/>
                 <RadioButton
                     android:id="@+id/Active"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="21sp"
                     android:text="Active"
                     android:onClick="onRadioButtonClicked"/>
             </RadioGroup>

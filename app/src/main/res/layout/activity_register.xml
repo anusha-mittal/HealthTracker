@@ -5,25 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:background="#F3D5F8"
+    android:background="#E0F7FA"
     android:padding="80dp"
     tools:context=".RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="591dp"
+        android:layout_height="match_parent"
         android:layout_gravity="top"
         android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="52dp"
-            android:fontFamily="sans-serif-light"
-            android:text="Register"
-            android:textAllCaps="true"
-            android:textColor="@color/black"
-            android:textSize="28sp" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -36,7 +26,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:hint="Enter name" />
+            android:padding="10dp"
+            android:background="@drawable/et_style"
+            android:hint="Name" />
 
         <EditText
             android:id="@+id/etNumber"
@@ -44,7 +36,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:hint="Enter Phone number" />
+            android:padding="10dp"
+            android:background="@drawable/et_style"
+            android:hint="Phone number" />
 
         <EditText
             android:id="@+id/etPass"
@@ -52,7 +46,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:hint="Enter Password" />
+            android:padding="10dp"
+            android:background="@drawable/et_style"
+            android:hint="Password" />
 
         <Button
             android:id="@+id/btnRegister"

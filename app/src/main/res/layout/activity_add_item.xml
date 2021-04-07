@@ -19,7 +19,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_gravity="center"
-        android:layout_margin="40dp"
+        android:layout_margin="10dp"
         android:padding="20dp"
         android:background="#A8F5F9FA">
 
@@ -31,8 +31,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="The amount of calories you should have: "
-                android:textSize="15sp"
+                android:text="Your daily calorie requirement is:"
+                android:fontFamily="sans-serif-light"
+                android:textSize="21sp"
                 android:textColor="@color/black"></TextView>
 
             <TextView
@@ -41,6 +42,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:hint="2000 cal"
+                android:fontFamily="sans-serif-condensed-medium"
                 android:textColor="@color/black"></TextView>
         </LinearLayout>
 
@@ -53,14 +55,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Your BMI is:  "
-                android:textColor="@color/black"
-                android:textSize="15sp"></TextView>
+                android:fontFamily="sans-serif-light"
+                android:textSize="21sp"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:id="@+id/calculatedBMI"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="24"
+                android:fontFamily="sans-serif-condensed-medium"
                 android:textSize="18sp"></TextView>
         </LinearLayout>
 
@@ -73,7 +77,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="According to your BMI you fall into:  "
-                android:textSize="15sp"
+                android:fontFamily="sans-serif-light"
+                android:textSize="21sp"
                 android:textColor="@color/black"></TextView>
 
             <TextView
@@ -81,32 +86,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:hint="Normal"></TextView>
+                android:fontFamily="sans-serif-condensed-medium"
+                android:hint="Normal Category"></TextView>
         </LinearLayout>
 
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:text="Ate something? ADD HERE: "
-            android:textAllCaps="true"
-            android:textColor="@color/black"
-            android:textSize="20dp" />
-
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter food item" />
-
-
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Add to today's total" />
     </LinearLayout>
     </LinearLayout>
 </ScrollView>

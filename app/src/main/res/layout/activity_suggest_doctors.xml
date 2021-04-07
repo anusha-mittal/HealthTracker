@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:layout_gravity="top"
+    tools:context=".SuggestDoctors">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="30dp"
+        android:layout_gravity="top">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Available Psychiatrists"
+            android:textSize="28sp"
+            android:fontFamily="sans-serif-light"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:background="#59D8FAEC"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="108dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/teal_200">
+
+            <ImageView
+                android:id="@+id/iconimage"
+                android:src="@drawable/doctor"
+                android:layout_width="88dp"
+                android:layout_height="108dp" />
+
+            <LinearLayout
+                android:id="@+id/textContainer"
+                android:layout_width="0dp"
+                android:layout_height="108dp"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:layout_alignRight="@id/iconimage"
+                android:paddingLeft="16dp">
+
+                <TextView
+                    android:id="@+id/eng"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/white"
+                    android:gravity="bottom"
+                    android:textStyle="bold"
+                    android:text="Dr. Richa "/>
+
+                <TextView
+                    android:id="@+id/miwok"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/white"
+                    android:gravity="top"
+                    android:layout_alignBottom="@id/eng"
+                    android:text="Fortis Hospital,Vasant Kunj"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/phonecall"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginRight="18dp"/>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/share"
+                    android:layout_marginBottom="18dp" />
+            </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="108dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/teal_200">
+
+            <ImageView
+                android:src="@drawable/doctor"
+                android:layout_width="88dp"
+                android:layout_height="108dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="108dp"
+                android:orientation="vertical"
+                android:layout_alignRight="@id/iconimage"
+                android:paddingLeft="16dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/white"
+                    android:gravity="bottom"
+                    android:textStyle="bold"
+                    android:text="Dr. Parineeta"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/white"
+                    android:gravity="top"
+                    android:layout_alignBottom="@id/eng"
+                    android:text="Cure and Care Clinic, Dwraka"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/phonecall"
+                        android:layout_marginBottom="18dp"
+                        android:layout_marginRight="18dp"/>
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/share"
+                        android:layout_marginBottom="18dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="108dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/teal_200">
+
+            <ImageView
+                android:src="@drawable/doctor"
+                android:layout_width="88dp"
+                android:layout_height="108dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="108dp"
+                android:orientation="vertical"
+                android:layout_alignRight="@id/iconimage"
+                android:paddingLeft="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/white"
+                    android:gravity="bottom"
+                    android:textStyle="bold"
+                    android:text="Dr. Surbhi"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/white"
+                    android:gravity="top"
+                    android:layout_alignBottom="@id/eng"
+                    android:text="MediSpot, Greater Kailash"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/phonecall"
+                        android:layout_marginBottom="18dp"
+                        android:layout_marginRight="18dp"/>
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/share"
+                        android:layout_marginBottom="18dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:background="#F3D5F8"
+    android:background="#E0F7FA"
     android:padding="80dp"
     tools:context=".LoginActivity">
 
@@ -15,15 +15,6 @@
         android:orientation="vertical"
         android:layout_gravity="top">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="Login"
-            android:layout_margin="68dp"
-            android:textAllCaps="true"
-            android:fontFamily="sans-serif-light"
-            android:textSize="28sp"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="128dp"
@@ -34,16 +25,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-
-            android:hint="Enter Phone Number"
-            android:layout_margin="10dp"
-            />
+            android:padding="10dp"
+            android:background="@drawable/et_style"
+            android:hint="Phone Number"
+            android:layout_margin="10dp" />
         <EditText
             android:id="@+id/etPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@drawable/et_style"
             android:layout_gravity="center"
-            android:hint="Enter Password"
+            android:hint="Password"
             android:layout_margin="10dp"
             />
         <Button
